@@ -15,7 +15,7 @@
     <title>Upwork Login - Login to your upwork account</title>
   </head>
   <body>
-    <nav class="nav-bar">
+    <nav class="nav-bar header">
       <div class="logo">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -44,9 +44,9 @@
     <div class="container sign-up-container">
       <h2>Join as a client or freelancer</h2>
       <div class="options">
-
-        <button class="btn">
-          
+        <button
+          class="btn btn-sign-up"
+          id="client-btn">
           <div class="btn-top">
             <div class="icon client-icon">
               <svg
@@ -106,44 +106,85 @@
               <input
                 type="radio"
                 name="radio"
-                id="rad" />
+                id="client" />
             </div>
           </div>
 
           <h4>I’m a client, hiring for a project</h4>
         </button>
 
-        <button class="btn">
-
+        <button
+          class="btn btn-sign-up"
+          id="freelancer-btn">
           <div class="btn-top">
             <div class="icon client-icon">
               <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              role="img">
-              <path
-                vector-effect="non-scaling-stroke"
-                stroke="var(--icon-color, #001e00)"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M9.43 21H5.99M3 18.45v-.9a7 7 0 017-7h.09a6.94 6.94 0 013.79 1.12m5.5 9.33h-11L10 14h11l-1.62 7zm-4.69-3a.5.5 0 100-1 .5.5 0 000 1zM12.77 5.73a2.73 2.73 0 11-5.46 0 2.73 2.73 0 015.46 0z"></path>
-            </svg>
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                role="img">
+                <path
+                  vector-effect="non-scaling-stroke"
+                  stroke="var(--icon-color, #001e00)"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M9.43 21H5.99M3 18.45v-.9a7 7 0 017-7h.09a6.94 6.94 0 013.79 1.12m5.5 9.33h-11L10 14h11l-1.62 7zm-4.69-3a.5.5 0 100-1 .5.5 0 000 1zM12.77 5.73a2.73 2.73 0 11-5.46 0 2.73 2.73 0 015.46 0z"></path>
+              </svg>
             </div>
             <div class="radio-btn">
               <input
                 type="radio"
                 name="radio"
-                id="rad" />
+                id="freelancer" />
             </div>
           </div>
 
           <h4>I’m a freelancer, looking for work</h4>
         </button>
-
       </div>
+      <button
+        class="btn submit-btn"
+        disabled>
+        Create account
+      </button>
+      <p class="ahaac">
+        Already have an account? <a href="login.html">Log in</a>
+      </p>
     </div>
+
+    <script>
+      let btns = document.querySelectorAll(".btn-sign-up");
+      let client = document.getElementById("client");
+      let freelancer = document.getElementById("freelancer");
+      let submitBtn = document.querySelector(".submit-btn");
+
+      btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btns.forEach((btn) => (
+            btn.style.background = "none", 
+            btn.style.outline = "none"
+          ));
+          submitBtn.disabled = false;
+          if (btn.id == "client-btn") {
+            client.checked = true;
+            btn.style.background = "#f9f9f9";
+            btn.style.outline = "2px solid #181818";
+            submitBtn.innerHTML = "Join as a Client";
+          } else if (btn.id == "freelancer-btn") {
+            freelancer.checked = true;
+            btn.style.background = "#f9f9f9";
+            btn.style.outline = "2px solid #181818";
+            submitBtn.innerHTML = "Apply as a Freelancer";
+          } else {
+            client.checked = false;
+            freelancer.checked = false;
+            btn.style.background = "none";
+          }
+        });
+      });
+    </script>
+
   </body>
 </html>

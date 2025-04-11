@@ -12,7 +12,7 @@
     <title>Upwork Login - Login to your upwork account</title>
   </head>
   <body>
-    <nav class="nav-bar">
+    <nav class="nav-bar header">
       <div class="logo">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@
           <a href="#">Continue with Google</a>
         </div>
 
-        <div class="btn apple">
+        <div class="btn apple d-hover">
           <a href="#">
             <svg
               width="10px"
@@ -148,5 +148,46 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      let btns = document.querySelectorAll(".btn-sign-up");
+      let client = document.getElementById("client");
+      let freelancer = document.getElementById("freelancer");
+      let submitBtn = document.querySelector(".submit-btn");
+
+      btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btns.forEach((btn) => (
+            btn.style.background = "none", 
+            btn.style.outline = "none"
+          ));
+          submitBtn.disabled = false;
+          if (btn.id == "client-btn") {
+            client.checked = true;
+            btn.style.background = "#f9f9f9";
+            btn.style.outline = "2px solid #181818";
+            submitBtn.innerHTML = "Join as a Client";
+          } else if (btn.id == "freelancer-btn") {
+            freelancer.checked = true;
+            btn.style.background = "#f9f9f9";
+            btn.style.outline = "2px solid #181818";
+            submitBtn.innerHTML = "Apply as a Freelancer";
+          } else {
+            client.checked = false;
+            freelancer.checked = false;
+            btn.style.background = "none";
+          }
+        });
+      });
+
+
+      window.onscroll = ()=> {
+        if (window.scrollY > 0) {
+          document.querySelector(".nav-bar").style.borderBottom = "1px solid #e9e9e9";
+          } else {
+            document.querySelector(".nav-bar").style.borderBottom = "none";}
+      };
+
+    </script>
   </body>
 </html>

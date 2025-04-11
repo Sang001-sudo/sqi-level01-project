@@ -17,7 +17,6 @@ nav {
   position: sticky;
   top: 0;
   background-color: white;
-  border-bottom: 1px solid #e9e9e9;
   z-index: 2;
 }
 input {
@@ -26,6 +25,7 @@ input {
   outline: none;
   height: 16px;
 }
+
 .logo {
   width: 85px;
 }
@@ -40,7 +40,7 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
   flex-direction: column;
 }
 
@@ -94,7 +94,9 @@ input {
     text-align: center;
     background: #108a00;
     cursor: pointer;
-
+}
+.btn:hover{
+    background: rgb(20, 168, 0);
 }
 .btn a{
     padding: 10px;
@@ -140,6 +142,16 @@ input {
     height: 38px;
     padding: 0;
 }
+.google:hover {
+  background: #4285f4;
+}
+.d-hover:hover {
+    background: initial;
+}
+.sign-up:hover{
+  background-color: #f9f9f9;
+}
+
 .google svg{
     border-radius: 8px;
     border: 1px solid #e9e9e9;
@@ -182,9 +194,15 @@ footer{
   font-weight: 700;
 }
 
+.sign-up-container{
+  gap: 20px;
+  height: fit-content;
+  padding: 2.5%;
+}
 .sign-up-container h2{
   font-weight: 500;
   font-size: 34px;
+  gap: 100px;
 }
 .options{
   display: flex;
@@ -192,11 +210,20 @@ footer{
   padding: 20px;
 }
 .options button{
-  border-style: solid;
+  border: 1px solid #8d8c8c;
   background: none;
   height: 150px;
   width: 250px;
 }
+.options button:hover{
+  outline: 2px solid #181818;
+  background-color: #f9f9f9;
+}
+.options button:active{
+  outline: 2px solid #181818;
+  transform: scale(0.9, 0.9);
+}
+
 .options button h4{
   font-size: 24px;
   line-height: 26.4px;
@@ -213,6 +240,70 @@ footer{
 .client-icon svg{
   width: 32px;
 }
+
+input[type="radio"] {
+  appearance: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #999;
+  margin-right: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input[type="radio"]::before {
+  content: "";
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #108a00;
+  display: none;
+}
+
+input[type="radio"]:checked {
+  border: 2px solid #108a00;
+}
+input[type="radio"]:checked::before {
+  display: block; /* Displays the inner circle */
+}
+
+.submit-btn{
+  width: fit-content;
+  border: none;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px 20px;
+  color: #FFFFFF;
+}
+
+.submit-btn:disabled {
+  background: #e9e9e9;
+  color: #a5a5a5;
+  cursor: not-allowed;
+}
+.ahaac{
+  color: #181818;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.ahaac a{
+  color: #108a00;
+}
+.ahaac a:hover{
+  color: rgb(20, 168, 0);
+}
+
+
+
+
+
+
+
 
 
 @media (max-width: 991px) {
