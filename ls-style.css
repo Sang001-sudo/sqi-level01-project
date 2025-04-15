@@ -121,7 +121,7 @@ input {
 }
 .h-line span{
     position: absolute;
-    left: 50%;
+    left: 45%;
     top: -20px;
     background: white;
     padding: 10px;
