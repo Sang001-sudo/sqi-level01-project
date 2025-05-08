@@ -2055,11 +2055,3 @@ footer {
   }
 }
 
-@media (min-width: 1920px) {
-  .top-lnk-content {
-    padding: 10px 150px;
-  }
-  .nav-lnk-itm-container {
-    padding: 25px 130px;
-  }
-}
